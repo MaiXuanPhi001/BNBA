@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">Binance</string>
+
+    <string name="text">Hello world! I am Mai Xuan Phi, Hello world! I am Mai Xuan PhiHello world! I am Mai Xuan Phi</string>
+
+    <string name="welcome">Welcome</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="signup">Do have not account? Sign Up</string>
+    <string name="changeLang">Change Language</string>
+    <string name="Home">Home</string>
+    <string name="Market">Market</string>
+    <string name="CopyTrade">Copy Trade</string>
+    <string name="Futures">Futures</string>
+    <string name="Wallets">Wallets</string>
+    <string name="English">English</string>
+    <string name="Vietnamese">Vietnamese</string>
+    <string name="Language">Language</string>
+    <string name="General">General</string>
+    <string name="Settings">Settings</string>
+    <string name="Turn_off">Turn off</string>
+    <string name="Appearance">Appearance</string>
+    <string name="Light_Mode">Light Mode</string>
+    <string name="Others">Others</string>
+    <string name="Change_Password">Change Password</string>
+    <string name="Dark_Mode">Dark Mode</string>
+    <string name="SingUpTo100">Sign up now to get up to $100</string>
+    <string name="LogIn">Log In</string>
+    <string name="SignUp">Sign Up</string>
+    <string name="Binance_Login">Binance Login</string>
+    <string name="Create_a_Binance_Account">Create a Binance Account</string>
+    <string name="Cannot_connect_server">Unable to connect to the server, please try again or check your network connection!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Binance</string>
+    <string name="text">Hello world! I am Mai Xuan Phi, Hello world! I am Mai Xuan PhiHello world! I am Mai Xuan Phi</string>
+
+    <string name="welcome">Chào mưng</string>
+    <string name="email">E meo</string>
+    <string name="password">Mật khâu</string>
+    <string name="login">Đăng nhập</string>
+    <string name="signup">Bạn ko có tài khoản? đăng ký</string>
+    <string name="changeLang">Thay đổi ngôn ngữ</string>
+    <string name="Home">Trang chủ</string>
+    <string name="Market">Thị trường</string>
+    <string name="CopyTrade">Copy Trade</string>
+    <string name="Futures">Futures</string>
+    <string name="Wallets">Ví</string>
+    <string name="English">Tiếng Anh</string>
+    <string name="Vietnamese">Tiếng Việt</string>
+    <string name="Language">Ngôn ngữ</string>
+    <string name="General">Chung</string>
+    <string name="Settings">Cài đặt</string>
+    <string name="Turn_off">Tắt</string>
+    <string name="Appearance">Giao diện</string>
+    <string name="Light_Mode">Chế độ sáng</string>
+    <string name="Others">Khác</string>
+    <string name="Change_Password">Đổi mật khẩu</string>
+    <string name="Dark_Mode">Chế độ tối</string>
+    <string name="SingUpTo100">Đăng ký ngay để nhận $100</string>
+    <string name="LogIn">Đăng nhập</string>
+    <string name="SignUp">Đăng ký</string>
+    <string name="Binance_Login">Đăng nhập Binance</string>
+    <string name="Create_a_Binance_Account">Tạo tài khoản Binance</string>
+    <string name="Cannot_connect_server">Không thể kết nối đến server, vui lòng thử lại hoặc kiểm tra đường truyền mạng!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

@@ -1,0 +1,49 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Binance" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:statusBarColor">@color/black</item>
+    </style>
+
+    <style name="Theme.Binance" parent="Base.Theme.Binance" />
+
+    <!-- Light mode   -->
+    <!-- Screen background if light mode on   -->
+    <style name="SCREEN">
+        <item name="android:background">#FFF</item>
+    </style>
+
+    <!--  Text background if light mode on  -->
+    <style name="TEXT">
+        <item name="android:textColor">#000</item>
+    </style>
+
+    <style name="BUTTON">
+        <item name="android:background">@android:color/holo_blue_dark</item>
+        <item name="android:textColor">#FFF</item>
+    </style>
+
+    <style name="style_text_bottom_tab">
+        <item name="android:textSize">10sp</item>
+        <item name="fontFamily">@font/fira_sans_condensed_regular</item>
+    </style>
+    
+    <!-- Light mode   -->
+    <style name="back_ground">
+        <item name="background">@color/white</item>
+    </style>
+    <style name="text_black">
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="background_gray3">
+        <item name="android:background">@color/gray3_light</item>
+    </style>
+    <style name="button_login_home">
+        <item name="backgroundTint">@color/gray3_light</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="input_login">
+        <item name="android:background">@color/gray4_light</item>
+    </style>
+</resources>
