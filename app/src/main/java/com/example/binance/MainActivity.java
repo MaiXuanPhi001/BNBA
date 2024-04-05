@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void checkDarkLight () {
         SharedPreferences sharedPreferences = getSharedPreferences(SETTING, Context.MODE_PRIVATE);
-        String appearance = sharedPreferences.getString(APPEARANCE, LIGHT);
+        String appearance = sharedPreferences.getString(APPEARANCE, DARK);
         int nightMode = AppCompatDelegate.getDefaultNightMode();
 
         if (appearance.equals(LIGHT)) {
