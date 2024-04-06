@@ -28,11 +28,9 @@ import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 
 import java.util.ArrayList;
 
-public class TradeActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener {
+public class TradeActivity extends AppCompatActivity {
 
     private CandleStickChart chart;
-    private SeekBar seekBarX, seekBarY;
-    private TextView tvX, tvY;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,16 +43,13 @@ public class TradeActivity extends AppCompatActivity implements SeekBar.OnSeekBa
             return insets;
         });
 
-        tvX = findViewById(R.id.tvXMax);
-        tvY = findViewById(R.id.tvYMax);
-
-        seekBarX = findViewById(R.id.seekBar1);
-        seekBarX.setOnSeekBarChangeListener(this);
-
-        seekBarY = findViewById(R.id.seekBar2);
-        seekBarY.setOnSeekBarChangeListener(this);
-
         chart = findViewById(R.id.chart1);
+
+        setChart();
+        setDataChart();
+    }
+
+    private void setChart() {
         chart.setBackgroundColor(Color.WHITE);
 
         chart.getDescription().setEnabled(false);
@@ -71,66 +66,41 @@ public class TradeActivity extends AppCompatActivity implements SeekBar.OnSeekBa
         XAxis xAxis = chart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setDrawGridLines(false);
+        xAxis.setDrawAxisLine(false);
 
         YAxis leftAxis = chart.getAxisLeft();
 //        leftAxis.setEnabled(false);
         leftAxis.setLabelCount(7, false);
-        leftAxis.setDrawGridLines(false);
+//        leftAxis.setDrawGridLines(false);
         leftAxis.setDrawAxisLine(false);
 
         YAxis rightAxis = chart.getAxisRight();
         rightAxis.setEnabled(false);
 //        rightAxis.setStartAtZero(false);
 
-        // setting data
-        seekBarX.setProgress(40);
-        seekBarY.setProgress(100);
-
         chart.getLegend().setEnabled(false);
     }
 
-//    @Override
-//    protected void saveToGallery() {
-//
-//    }
-
-    @Override
-    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+    private void setDataChart() {
         System.out.println("dang luot");
-        progress = (seekBarX.getProgress());
 
-        tvX.setText(String.valueOf(progress));
-        tvY.setText(String.valueOf(seekBarY.getProgress()));
-
-        chart.resetTracking();
+//        chart.resetTracking();
 
         ArrayList<CandleEntry> values = new ArrayList<>();
 
-        for (int i = 0; i < progress; i++) {
-            float multi = (seekBarY.getProgress() + 1);
-            float val = (float) (Math.random() * 40) + multi;
+        for (int i = 0; i < 30; i++) {
+            float high = 8f;
+            float low = 3f;
 
-            float high = (float) (Math.random() * 9) + 8f;
-            float low = (float) (Math.random() * 9) + 8f;
-
-            float open = (float) (Math.random() * 6) + 1f;
-            float close = (float) (Math.random() * 6) + 1f;
-
-            boolean even = i % 2 == 0;
-
-            values.add(new CandleEntry(
-                    i, val + high,
-                    val - low,
-                    even ? val + open : val - open,
-                    even ? val - close : val + close
-//                    getResources().getDrawable(R.drawable.star)
-            ));
+            float open = 7f;
+            float close = 6f;
+            values.add(new CandleEntry(i, high,low,open,close));
         }
 
         CandleDataSet set1 = new CandleDataSet(values, "Data Set");
 
         set1.setDrawIcons(false);
-        set1.setAxisDependency(YAxis.AxisDependency.LEFT);
+//        set1.setAxisDependency(YAxis.AxisDependency.LEFT);
 //        set1.setColor(Color.rgb(80, 80, 80));
         set1.setShadowColor(Color.DKGRAY);
         set1.setShadowWidth(0.7f);
@@ -139,21 +109,12 @@ public class TradeActivity extends AppCompatActivity implements SeekBar.OnSeekBa
         set1.setIncreasingColor(Color.rgb(122, 242, 84));
         set1.setIncreasingPaintStyle(Paint.Style.STROKE);
         set1.setNeutralColor(Color.BLUE);
+        set1.setDrawValues(false);
         //set1.setHighlightLineWidth(1f);
 
         CandleData data = new CandleData(set1);
 
         chart.setData(data);
         chart.invalidate();
-    }
-
-    @Override
-    public void onStartTrackingTouch(SeekBar seekBar) {
-
-    }
-
-    @Override
-    public void onStopTrackingTouch(SeekBar seekBar) {
-
     }
 }
