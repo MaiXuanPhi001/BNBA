@@ -26,4 +26,7 @@
     <dimen name="height_input_login">40sp</dimen>
     <dimen name="padding_horizontal_input_login">10sp</dimen>
     <dimen name="text_size_input_login">12sp</dimen>
+    <!--  trade screen  -->
+    <dimen name="size_icon_top_trade">17sp</dimen>
+    <dimen name="size_text_title_24h">8sp</dimen>
 </resources>

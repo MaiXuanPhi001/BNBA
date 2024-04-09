@@ -1,6 +1,8 @@
 package com.example.binance.model;
 
-public class Coin {
+import java.io.Serializable;
+
+public class Coin implements Serializable {
     private int id;
     private String symbol;
     private float close;
