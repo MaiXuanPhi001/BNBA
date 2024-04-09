@@ -1,7 +1,10 @@
 package com.example.binance.adapter;
 
+import static com.example.binance.constants.App.COIN;
+
 import android.content.Context;
 import android.content.Intent;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +19,7 @@ import com.example.binance.R;
 import com.example.binance.model.Coin;
 import com.example.binance.screens.TradeActivity;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class CoinHomeAdapter extends RecyclerView.Adapter<CoinHomeAdapter.CoinHomeViewHolder>{
@@ -53,6 +57,7 @@ public class CoinHomeAdapter extends RecyclerView.Adapter<CoinHomeAdapter.CoinHo
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, TradeActivity.class);
+                intent.putExtra(COIN, (Serializable) coin);
                 context.startActivity(intent);
             }
         });
