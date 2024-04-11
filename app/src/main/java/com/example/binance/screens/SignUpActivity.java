@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.binance.R;
-import com.example.binance.model.Singleton;
+import com.example.binance.models.Singleton;
 
 public class SignUpActivity extends AppCompatActivity {
 

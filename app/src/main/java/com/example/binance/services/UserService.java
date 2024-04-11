@@ -4,18 +4,14 @@ import static com.example.binance.constants.Service.DOMAIN;
 import static com.example.binance.constants.Service.GET_PROFILE;
 import static com.example.binance.constants.Service.LOGIN;
 
-import com.example.binance.model.Posts;
-import com.example.binance.model.RequestLogin;
-import com.example.binance.model.ResponseLogin;
+import com.example.binance.models.logins.RequestLogin;
+import com.example.binance.models.logins.ResponseLogin;
 
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.Body;
-import retrofit2.http.Field;
-import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.Header;
-import retrofit2.http.Headers;
 import retrofit2.http.POST;
 
 public interface UserService {

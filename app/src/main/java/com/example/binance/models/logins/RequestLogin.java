@@ -1,4 +1,4 @@
-package com.example.binance.model;
+package com.example.binance.models.logins;
 
 public class RequestLogin {
     private String email;

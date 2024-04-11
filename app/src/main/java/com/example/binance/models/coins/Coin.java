@@ -1,4 +1,4 @@
-package com.example.binance.model;
+package com.example.binance.models.coins;
 
 import java.io.Serializable;
 
@@ -13,6 +13,11 @@ public class Coin implements Serializable {
         this.symbol = symbol;
         this.close = close;
         this.percentChange = percentChange;
+    }
+
+    public Coin(int id, String symbol) {
+        this.id = id;
+        this.symbol = symbol;
     }
 
     public int getId() {

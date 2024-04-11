@@ -2,9 +2,10 @@ package com.example.binance.adapter;
 
 import static com.example.binance.constants.App.COIN;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Parcelable;
+import android.graphics.PorterDuff;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,11 +13,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.binance.R;
-import com.example.binance.model.Coin;
+import com.example.binance.models.coins.Coin;
 import com.example.binance.screens.TradeActivity;
 
 import java.io.Serializable;
@@ -32,6 +33,7 @@ public class CoinHomeAdapter extends RecyclerView.Adapter<CoinHomeAdapter.CoinHo
         this.width = width;
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     public void setData(List<Coin> coins) {
         this.coins = coins;
         notifyDataSetChanged();
@@ -44,15 +46,22 @@ public class CoinHomeAdapter extends RecyclerView.Adapter<CoinHomeAdapter.CoinHo
         return new CoinHomeViewHolder(view);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull CoinHomeViewHolder holder, int position) {
-        holder.cvCoin.setMinimumWidth(width * 10 / 100);
+        holder.lnPercentCoin.setMinimumWidth(width * 10 / 100);
 
         Coin coin = coins.get(position);
         holder.tvSymbol.setText(coin.getSymbol());
         holder.tvClose.setText(String.valueOf(coin.getClose()));
-        holder.tvClose2.setText(String.valueOf(coin.getClose()));
-        holder.tvPercent.setText(String.valueOf(coin.getPercentChange()));
+        holder.tvClose2.setText(coin.getClose() + "");
+        if (coin.getPercentChange() >= 0) {
+            holder.tvPercent.setText("+" + coin.getPercentChange() + "%");
+            holder.lnPercentCoin.getBackground().setColorFilter(ContextCompat.getColor(context, R.color.green_can), PorterDuff.Mode.SRC_ATOP);
+        } else {
+            holder.tvPercent.setText(coin.getPercentChange() + "%");
+            holder.lnPercentCoin.getBackground().setColorFilter(ContextCompat.getColor(context, R.color.red_can), PorterDuff.Mode.SRC_ATOP);
+        }
         holder.linerLayoutItemCoin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,8 +82,7 @@ public class CoinHomeAdapter extends RecyclerView.Adapter<CoinHomeAdapter.CoinHo
 
     public class CoinHomeViewHolder extends RecyclerView.ViewHolder{
         private TextView tvSymbol, tvClose, tvClose2, tvPercent;
-        private CardView cvCoin;
-        private LinearLayout linerLayoutItemCoin;
+        private LinearLayout linerLayoutItemCoin, lnPercentCoin;
 
         public CoinHomeViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -82,7 +90,7 @@ public class CoinHomeAdapter extends RecyclerView.Adapter<CoinHomeAdapter.CoinHo
             tvClose = itemView.findViewById(R.id.tv_close_price_home);
             tvClose2 = itemView.findViewById(R.id.tv_close_price_home2);
             tvPercent = itemView.findViewById(R.id.tv_percent_coin_home);
-            cvCoin = itemView.findViewById(R.id.cv_percent_coin_home);
+            lnPercentCoin = itemView.findViewById(R.id.ln_percent_coin_home);
             linerLayoutItemCoin = itemView.findViewById(R.id.linear_layout_item_coin_home);
         }
     }

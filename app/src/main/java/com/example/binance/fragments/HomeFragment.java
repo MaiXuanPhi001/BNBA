@@ -1,6 +1,5 @@
 package com.example.binance.fragments;
 
-import static androidx.core.content.ContextCompat.getSystemService;
 import static com.example.binance.constants.Service.BEARER;
 import static com.example.binance.constants.Service.DOMAIN;
 import static com.example.binance.constants.Storages.DARK_INT;
@@ -20,20 +19,18 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.DisplayMetrics;
-import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.example.binance.R;
 import com.example.binance.adapter.CoinHomeAdapter;
-import com.example.binance.model.Coin;
-import com.example.binance.model.ResponseGetListCoin;
-import com.example.binance.model.Singleton;
+import com.example.binance.models.coins.Coin;
+import com.example.binance.models.coins.ResponseGetListCoin;
+import com.example.binance.models.Singleton;
 import com.example.binance.screens.LoginActivity;
 import com.example.binance.screens.ProfileActivity;
 import com.example.binance.screens.SignUpActivity;

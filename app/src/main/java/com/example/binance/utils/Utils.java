@@ -3,6 +3,7 @@ package com.example.binance.utils;
 import static com.example.binance.constants.Storages.DEFAULT_LANGUAGE;
 import static com.example.binance.constants.Storages.LANGUAGE;
 import static com.example.binance.constants.Storages.SETTING;
+import static com.example.binance.constants.Storages.TOKEN;
 
 import android.app.Activity;
 import android.content.Context;
@@ -36,5 +37,11 @@ public class Utils {
         if (!currentLanguage.equals(language)) {
             activity.recreate();
         }
+    }
+
+    public static String getToken(Activity activity) {
+        SharedPreferences sharedPreferences = activity.getSharedPreferences(SETTING, Context.MODE_PRIVATE);
+        String token = sharedPreferences.getString(TOKEN, "");
+        return token;
     }
 }

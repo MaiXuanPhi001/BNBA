@@ -7,4 +7,5 @@ public class Service {
     public static final String GET_PROFILE = "api/user/getProfile";
     public static final String BEARER = "Bearer";
     public static final String GET_LIST_COIN = "api/binance/getListCoin";
+    public static final String GET_CHART = "api/binaryOption/getChart";
 }

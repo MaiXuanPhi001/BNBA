@@ -1,4 +1,4 @@
-package com.example.binance.model;
+package com.example.binance.models.users;
 
 public class Profile {
     private int id;

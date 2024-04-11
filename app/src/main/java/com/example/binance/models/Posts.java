@@ -1,4 +1,4 @@
-package com.example.binance.model;
+package com.example.binance.models;
 
 public class Posts {
     private int userId;

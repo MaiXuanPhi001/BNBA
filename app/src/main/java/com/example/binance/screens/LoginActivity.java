@@ -11,7 +11,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.InputType;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -19,11 +18,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.binance.R;
-import com.example.binance.model.Posts;
-import com.example.binance.model.Profile;
-import com.example.binance.model.RequestLogin;
-import com.example.binance.model.ResponseLogin;
-import com.example.binance.model.Singleton;
+import com.example.binance.models.users.Profile;
+import com.example.binance.models.logins.RequestLogin;
+import com.example.binance.models.logins.ResponseLogin;
+import com.example.binance.models.Singleton;
 import com.example.binance.services.UserService;
 
 import org.json.JSONException;
@@ -31,7 +29,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 
-import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

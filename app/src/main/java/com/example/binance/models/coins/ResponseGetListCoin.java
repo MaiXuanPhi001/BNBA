@@ -1,9 +1,11 @@
-package com.example.binance.model;
+package com.example.binance.models.coins;
 
-public class ResponseLogin {
+import java.util.List;
+
+public class ResponseGetListCoin {
     private String message;
     private boolean status;
-    private Profile data;
+    private List<Coin> data;
 
     public String getMessage() {
         return message;
@@ -21,11 +23,11 @@ public class ResponseLogin {
         this.status = status;
     }
 
-    public Profile getData() {
+    public List<Coin> getData() {
         return data;
     }
 
-    public void setData(Profile data) {
+    public void setData(List<Coin> data) {
         this.data = data;
     }
 }

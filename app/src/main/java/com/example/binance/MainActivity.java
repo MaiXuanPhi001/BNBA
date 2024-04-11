@@ -21,14 +21,12 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
 
-import com.example.binance.model.Profile;
-import com.example.binance.model.ResponseLogin;
-import com.example.binance.model.Singleton;
+import com.example.binance.models.users.Profile;
+import com.example.binance.models.logins.ResponseLogin;
+import com.example.binance.models.Singleton;
 import com.example.binance.screens.BottomTabScreen;
 import com.example.binance.services.UserService;
-import com.example.binance.test.TestActivity;
 import com.example.binance.utils.Utils;
 
 import java.util.Locale;

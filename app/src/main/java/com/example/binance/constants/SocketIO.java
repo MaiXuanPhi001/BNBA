@@ -2,6 +2,7 @@ package com.example.binance.constants;
 
 public class SocketIO {
     public static final String LIST_COIN = "listCoin";
+    public static final String UPDATESPOT = "UPDATESPOT";
 
 //    newSocket.on('listCoin', (coins: ICoins[]) => {
 //        if (coins.length > 0) {
@@ -13,4 +14,6 @@ public class SocketIO {
 //            }
 //        }
 //    })
+
+    //         newSocket.on(`${symbol}UPDATESPOT`, data => {
 }

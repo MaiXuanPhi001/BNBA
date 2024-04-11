@@ -1,11 +1,13 @@
-package com.example.binance.model;
+package com.example.binance.models;
 
-import java.util.List;
-
-public class ResponseGetListCoin {
+public class ResponseAPI {
     private String message;
     private boolean status;
-    private List<Coin> data;
+
+    public ResponseAPI(String message, boolean status) {
+        this.message = message;
+        this.status = status;
+    }
 
     public String getMessage() {
         return message;
@@ -21,13 +23,5 @@ public class ResponseGetListCoin {
 
     public void setStatus(boolean status) {
         this.status = status;
-    }
-
-    public List<Coin> getData() {
-        return data;
-    }
-
-    public void setData(List<Coin> data) {
-        this.data = data;
     }
 }

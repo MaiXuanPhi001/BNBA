@@ -1,4 +1,6 @@
-package com.example.binance.model;
+package com.example.binance.models;
+
+import com.example.binance.models.users.Profile;
 
 public class Singleton {
     private static Singleton INSTANCE = null;
