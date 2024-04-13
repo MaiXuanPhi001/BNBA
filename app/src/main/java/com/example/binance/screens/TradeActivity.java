@@ -31,6 +31,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.binance.R;
 import com.example.binance.models.Singleton;
 import com.example.binance.models.coins.Coin;
+import com.example.binance.models.coins.ResponseGetListCoin;
 import com.example.binance.models.getChart.DataResponseGetChart;
 import com.example.binance.models.getChart.RequestGetChart;
 import com.example.binance.models.getChart.ResponseGetChart;
@@ -92,45 +93,48 @@ public class TradeActivity extends AppCompatActivity {
         coin = (Coin) getIntent().getSerializableExtra(COIN);
         getChartFromAPI();
         System.out.println("symbol: " + coin.getSymbol());
-        connectSocket();
-        setChart();
+//        connectSocket();
+//        setChart();
 //        setDataChart();
     }
 
     private void getChartFromAPI() {
         String token = getToken(TradeActivity.this);
         RequestGetChart requestGetChart = new RequestGetChart(MAX_NUMBER_CANDLE, coin.getSymbol(), TIME_CHART);
-        BinanceService.binanceService.getChart(BEARER + " " + token, requestGetChart).enqueue(new Callback<ResponseGetChart>() {
-            @Override
-            public void onResponse(Call<ResponseGetChart> call, Response<ResponseGetChart> response) {
-                // Hàm trả về ResponseLogin có thể khai báo thiếu field nhưng phải đúng tên và kiểu dữ liệu, nếu không đúng sẽ chạy hàm onFailure bên dưới
-                // Vd: response có trả về filed message nhưng không nhất thiết phải khai báo field message trong class ResponseLogin
-                // Vd: balance trong response là kiểu float thì phải khai báo đúng kiểu float, nếu không đúng sẽ chạy hàm onFailure bên dưới
-                if (response.code() == 200) {
-                    DataResponseGetChart dataResponseGetChart = response.body().getData();
-                    Singleton singleton = Singleton.getInstance();
-//                    singleton.setProfile(dataResponseGetChart);
-//                    singleton.setLogin(true);
-//                    SharedPreferences.Editor editor = getSharedPreferences(SETTING, MODE_PRIVATE).edit();
-//                    editor.putString(TOKEN, profile.getToken());
-//                    editor.apply();
-//                    finish();
-                } else {
-                    try {
-                        JSONObject jsonObject = new JSONObject(response.errorBody().string());
-                        String errorMessage = jsonObject.getString("message");
-                        Toast.makeText(TradeActivity.this, errorMessage, Toast.LENGTH_SHORT).show();
-                    } catch (JSONException | IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
 
-            @Override
-            public void onFailure(Call<ResponseGetChart> call, Throwable t) {
-                Toast.makeText(TradeActivity.this, R.string.Cannot_connect_server, Toast.LENGTH_LONG).show();
-            }
-        });
+        BinanceService.binanceService.getChart(BEARER + " " + token);
+
+//        BinanceService.binanceService.getChart(BEARER + " " + token).enqueue(new Callback<ResponseGetChart>() {
+//            @Override
+//            public void onResponse(Call<ResponseGetChart> call, Response<ResponseGetChart> response) {
+//                // Hàm trả về ResponseLogin có thể khai báo thiếu field nhưng phải đúng tên và kiểu dữ liệu, nếu không đúng sẽ chạy hàm onFailure bên dưới
+//                // Vd: response có trả về filed message nhưng không nhất thiết phải khai báo field message trong class ResponseLogin
+//                // Vd: balance trong response là kiểu float thì phải khai báo đúng kiểu float, nếu không đúng sẽ chạy hàm onFailure bên dưới
+////                if (response.code() == 200) {
+////                    DataResponseGetChart dataResponseGetChart = response.body().getData();
+////                    Singleton singleton = Singleton.getInstance();
+//////                    singleton.setProfile(dataResponseGetChart);
+//////                    singleton.setLogin(true);
+//////                    SharedPreferences.Editor editor = getSharedPreferences(SETTING, MODE_PRIVATE).edit();
+//////                    editor.putString(TOKEN, profile.getToken());
+//////                    editor.apply();
+//////                    finish();
+////                } else {
+////                    try {
+////                        JSONObject jsonObject = new JSONObject(response.errorBody().string());
+////                        String errorMessage = jsonObject.getString("message");
+////                        Toast.makeText(TradeActivity.this, errorMessage, Toast.LENGTH_SHORT).show();
+////                    } catch (JSONException | IOException e) {
+////                        e.printStackTrace();
+////                    }
+////                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<ResponseGetChart> call, Throwable t) {
+//                Toast.makeText(TradeActivity.this, R.string.Cannot_connect_server, Toast.LENGTH_LONG).show();
+//            }
+//        });
     }
 
     private void connectSocket() {

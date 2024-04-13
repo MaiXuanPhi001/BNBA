@@ -4,6 +4,7 @@ import static com.example.binance.constants.Service.DOMAIN;
 import static com.example.binance.constants.Service.GET_CHART;
 import static com.example.binance.constants.Service.GET_LIST_COIN;
 
+import com.example.binance.models.ResponseAPI;
 import com.example.binance.models.getChart.RequestGetChart;
 import com.example.binance.models.getChart.ResponseGetChart;
 import com.example.binance.models.logins.RequestLogin;
@@ -28,7 +29,7 @@ public interface BinanceService {
 
     @POST(GET_CHART)
     Call<ResponseGetChart> getChart(
-            @Header("Authorization") String bearerToken,
-            @Body RequestGetChart requestGetChart
+            @Header("Authorization") String bearerToken
+//            @Body RequestGetChart requestGetChart
     );
 }
