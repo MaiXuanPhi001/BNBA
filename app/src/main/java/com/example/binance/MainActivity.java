@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences(SETTING, Context.MODE_PRIVATE);
         new Utils().setSystemUIVisibility(MainActivity.this);
         checkDarkLight();
+        System.out.println("abc");
     }
 
     private void checkDarkLight () {
